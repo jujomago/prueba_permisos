@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sistema de Gestión de Usuarios y Roles (RBAC)
 
-## Getting Started
+Este proyecto es una plataforma administrativa diseñada para gestionar el control de acceso basado en roles (RBAC). Permite administrar usuarios, definir roles complejos y asignar permisos granulares, todo con una experiencia de usuario moderna y fluida.
 
-First, run the development server:
+## 🚀 Guía para el Revisor (Interviewer)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Este proyecto ha sido desarrollado enfocándose en la **limpieza del código**, **reusabilidad** y **experiencia de usuario (UX)**. A continuación, los puntos clave para revisar:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 1. Gestión de Roles (`/roles`)
+- **Generación Automática de Códigos**: Al crear un rol, el sistema genera un identificador único en tiempo real.
+- **Validación de Unicidad**: Si el código generado ya existe, el sistema añade automáticamente un sufijo numérico y muestra un indicador visual de "bloqueo" (icono de candado) para señalar que es un valor controlado.
+- **Asignación de Permisos**: Interfaz intuitiva para seleccionar múltiples capacidades del sistema.
+- **Aesthetics**: Diseño limpio con inputs en mayúsculas automáticas y feedback visual inmediato.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 2. Gestión de Usuarios (`/usuarios`)
+- **Creación Masiva**: El campo de email acepta múltiples direcciones separadas por comas. El sistema valida cada una individualmente y crea registros independientes.
+- **Sincronización de Datos**: El formulario de usuarios consume dinámicamente los roles creados en la sección anterior.
+- **Estados**: Control de estado (Activo/Inactivo) para cada usuario.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Arquitectura y Lógica
+- **Custom Hooks (`app/hooks/useStorage.ts`)**: Se implementó un hook robusto para manejar la persistencia en `localStorage`. Este hook se encarga de:
+    - Sincronizar el estado de React con el navegador.
+    - Cargar datos iniciales (Mocks) si el storage está vacío.
+    - Manejar errores de parseo de forma segura.
+- **Componentes Reutilizables**: El `Modal` es un componente desacoplado que utiliza las API nativas del navegador (`dialog`) para mayor accesibilidad y rendimiento.
+- **Validaciones**: Uso intensivo de `react-hook-form` para validaciones complejas de esquemas, patrones de email y obligatoriedad de campos.
 
-## Learn More
+## 🛠️ Tecnologías Utilizadas
 
-To learn more about Next.js, take a look at the following resources:
+- **Framework**: Next.js 14+ (App Router)
+- **Lenguaje**: TypeScript
+- **Estilos**: Tailwind CSS (con enfoque en diseño premium y minimalista)
+- **Formularios**: React Hook Form
+- **Persistencia**: LocalStorage API
+- **Iconografía**: SVG personalizado / Lucide-like icons
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📦 Instalación y Uso
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clonar el repositorio.
+2. Instalar dependencias:
+   ```bash
+   npm install
+   ```
+3. Ejecutar en modo desarrollo:
+   ```bash
+   npm run dev
+   ```
+4. Abrir [http://localhost:3000](http://localhost:3000).
 
-## Deploy on Vercel
+## 📂 Estructura del Proyecto
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `/app`: Rutas del sistema (Roles, Usuarios) y Layout principal.
+- `/app/components`: Componentes UI reutilizables (Modal).
+- `/app/hooks`: Lógica de negocio extraída (Persistencia).
+- `/data`: Archivos JSON con permisos, roles y usuarios iniciales.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Desarrollado como una prueba técnica de alta calidad para demostrar habilidades en Frontend y Arquitectura de Software.*
