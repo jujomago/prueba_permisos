@@ -1,0 +1,35 @@
+[
+    {
+        "id": "1",
+        "email": "admin@sistema.com",
+        "status": "active",
+        "roles": [
+            "Administrador Root",
+            "Gestor de Usuarios"
+        ]
+    },
+    {
+        "id": "2",
+        "email": "juan.perez@empresa.com",
+        "status": "active",
+        "roles": [
+            "Auditor / Visor"
+        ]
+    },
+    {
+        "id": "3",
+        "email": "maria.garcia@ventas.com",
+        "status": "inactive",
+        "roles": [
+            "Auditor / Visor"
+        ]
+    },
+    {
+        "id": "4",
+        "email": "soporte.tecnico@it.com",
+        "status": "pending",
+        "roles": [
+            "Gestor de Usuarios"
+        ]
+    }
+]

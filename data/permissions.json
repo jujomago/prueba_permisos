@@ -1,0 +1,42 @@
+[
+    {
+        "code": "PERM_VIEW_USERS",
+        "name": "VER USUARIOS",
+        "description": "Permite visualizar la lista completa de usuarios del sistema."
+    },
+    {
+        "code": "PERM_CREATE_USER",
+        "name": "CREAR USUARIO",
+        "description": "Permite registrar nuevos usuarios en la plataforma."
+    },
+    {
+        "code": "PERM_EDIT_USER",
+        "name": "EDITAR USUARIO",
+        "description": "Permite modificar datos de usuarios existentes."
+    },
+    {
+        "code": "PERM_DELETE_USER",
+        "name": "ELIMINAR USUARIO",
+        "description": "Permite dar de baja o eliminar usuarios del sistema."
+    },
+    {
+        "code": "PERM_VIEW_ROLES",
+        "name": "VER ROLES",
+        "description": "Permite visualizar los perfiles y permisos configurados."
+    },
+    {
+        "code": "PERM_CREATE_ROLE",
+        "name": "CREAR ROL",
+        "description": "Permite definir nuevos perfiles de acceso."
+    },
+    {
+        "code": "PERM_EDIT_ROLE",
+        "name": "EDITAR ROL",
+        "description": "Permite modificar la configuración de roles existentes."
+    },
+    {
+        "code": "PERM_DELETE_ROLE",
+        "name": "ELIMINAR ROL",
+        "description": "Permite eliminar perfiles de acceso del sistema."
+    }
+]

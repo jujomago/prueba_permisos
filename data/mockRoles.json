@@ -1,0 +1,36 @@
+[
+    {
+        "code": "ADMIN_ROOT",
+        "name": "Administrador Root",
+        "description": "Acceso total a todas las funciones del sistema, incluyendo gestión de usuarios y roles.",
+        "permissions": [
+            "PERM_VIEW_USERS",
+            "PERM_CREATE_USER",
+            "PERM_EDIT_USER",
+            "PERM_DELETE_USER",
+            "PERM_VIEW_ROLES",
+            "PERM_CREATE_ROLE",
+            "PERM_EDIT_ROLE",
+            "PERM_DELETE_ROLE"
+        ]
+    },
+    {
+        "code": "USER_ADMIN",
+        "name": "Gestor de Usuarios",
+        "description": "Responsable de administrar cuentas de usuario y sus estados.",
+        "permissions": [
+            "PERM_VIEW_USERS",
+            "PERM_CREATE_USER",
+            "PERM_EDIT_USER"
+        ]
+    },
+    {
+        "code": "VIEWER",
+        "name": "Auditor / Visor",
+        "description": "Acceso de solo lectura para supervisar la configuración del sistema.",
+        "permissions": [
+            "PERM_VIEW_USERS",
+            "PERM_VIEW_ROLES"
+        ]
+    }
+]
