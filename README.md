@@ -1,5 +1,7 @@
 # Sistema de Gestión de Usuarios y Roles (RBAC)
 
+![Vista previa del sistema](public/screenshots/preview.png)
+
 Este proyecto es una plataforma administrativa diseñada para gestionar el control de acceso basado en roles (RBAC). Permite administrar usuarios, definir roles complejos y asignar permisos granulares, todo con una experiencia de usuario moderna y fluida.
 
 ## 🚀 Guía para el Revisor (Interviewer)
